@@ -7,6 +7,11 @@ var mayella = ["Mayella", "89068", "35000", 2];
 
 var employees = [atticus, jem, boo, scout, robert, mayella];
 
+
+for(var i = 0; i < employees.length; i++){
+console.log(bonusDetermine(employees[ i ]));
+}
+
 function bonusDetermine(emp){
   // bonus rate
   var bonusRate = 0.0;
@@ -36,5 +41,11 @@ function bonusDetermine(emp){
   }else if (bonusRate < 0.00) {
     bonusRate = 0.00;
   }
-  return bonusRate;
-};
+  var empName = emp[0];
+  var aAComp = Number(emp[2]) + bonusRate * Number(emp[2]);
+  var totalBonus = Math.round(bonusRate * emp[2]);
+
+  var finalBonus = [empName, bonusRate, aAComp, totalBonus];
+
+  return finalBonus;
+}
